@@ -1,6 +1,8 @@
 import React from "react";
+
 function App() {
   const [persona, setPersona] = useState({});
+
   return (
     <form>
       <input name="nombre" />
@@ -9,4 +11,5 @@ function App() {
     </form>
   );
 }
+
 export default App;
