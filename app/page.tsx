@@ -1,15 +1,20 @@
 import React, { useState } from "react";
 
-function App() {
-  const [persona, setPersona] = useState({ nombre: "", apellido: "" });
-  const [personas, setPersonas] = useState([]);
+interface Persona {
+  nombre: string;
+  apellido: string;
+}
 
-  const handleChange = (e) => {
+function App() {
+  const [persona, setPersona] = useState<Persona>({ nombre: "", apellido: "" });
+  const [personas, setPersonas] = useState<Persona[]>([]);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setPersona({ ...persona, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setPersonas([...personas, persona]);
     setPersona({ nombre: "", apellido: "" });
