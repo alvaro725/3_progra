@@ -16,13 +16,6 @@ function App() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
-    // Validación agregada desde Parte 5
-    if (persona.nombre.length < 3 || persona.apellido.length < 3) {
-      alert("Nombre y apellido deben tener al menos 3 caracteres");
-      return;
-    }
-
     setPersonas([...personas, persona]);
     setPersona({ nombre: "", apellido: "" });
   };
